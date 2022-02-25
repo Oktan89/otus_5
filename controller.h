@@ -1,29 +1,31 @@
 #pragma once
 #include "interface.h"
+#include "component.h"
 // #include "view.h"
 // #include "model.h"
 
 
 class Controller : public IController
 {
-    using model_type = std::shared_ptr<IModelDoc>;
-    model_type _model;
+    using Imodel_type = std::shared_ptr<IModel>;
+    Imodel_type _model;
     
 public:
     
-    Controller(const model_type& model) : _model(model){}
+    Controller(Imodel_type model) : _model(model){}
 
-    void setModel(model_type model) override
+    void createDoc(const std::string& file) override
     {
-        _model = model;
-    }
-
-    void createDoc() override
-    {
-        _model->createDoc();
+        _model->createDoc(file);
     }
     void importDoc() override {}
     void exportDoc() override {}
-    void createShape() override {}
-    void deleteShape() override {}
+    void createShape(std::shared_ptr<Component> shape) override 
+    {
+        _model->createShape(shape);
+    }
+    void deleteShape(std::shared_ptr<Component> shape) override 
+    {
+        _model->deleteShape(shape);
+    }
 };

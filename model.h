@@ -13,24 +13,28 @@
 #include <algorithm>
 #include <string>
 #include "interface.h"
-// #include "view.h"
+#include "component.h"
+
+
 
 /**
  * @brief Базовый класс для моделей работы векторного редактора
  * 
  */
-class __BaseModelDoc : public IModelDoc
+class __BaseModel : public IModel
 {
     std::list<IView*> _subs;
- 
+protected:
+    std::unique_ptr<Component> component; 
+
 public:
    
-    void subscription(IView* view) override
+    void connect(IView* view) override
     {
         _subs.push_back(view);
     }
 
-    void unsubscribe(IView* view) override
+    void disconnect(IView* view) override
     {
         auto it = std::find(_subs.cbegin(), _subs.cend(), view);
         _subs.erase(it);
@@ -43,29 +47,56 @@ protected:
             s->update();
     }
 
-     __BaseModelDoc() = default;
-    ~__BaseModelDoc() = default;
+     __BaseModel() = default;
+
+    ~__BaseModel(){}
 };
 
-class Doc : public __BaseModelDoc
+class Editor : public __BaseModel
 {
 
 public:
 
-    void createDoc() override
+    void draw() override
     {
-        std::cout << "Model: create document" << std::endl;
+        component->draw();
+    }
+
+    void createDoc(const std::string& file) override
+    {
+        std::cout << "Model: create document " << file << std::endl;
+        component = std::make_unique<File>(file);
         notification();
     }
+    
     void importDoc() override
     {
         std::cout << "Model: import document" << std::endl;
         notification();
     }
+    
     void exportDoc() override
     {
         std::cout << "Model: Export document" << std::endl;
         notification();        
+    }
+
+    void createShape(std::shared_ptr<Component> shape) override
+    {
+        std::cout << "Shape: create" << std::endl;
+        if(component)
+        {
+            component->createShape(shape);
+            notification();
+        }
+        else throw std::runtime_error("File not created");
+    }
+    
+    void deleteShape(std::shared_ptr<Component> shape) override
+    {
+        std::cout << "Shape: delete" << std::endl;
+        component->deleteShape(shape);
+        notification();
     }
 
 };
