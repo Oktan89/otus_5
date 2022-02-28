@@ -19,11 +19,14 @@ public:
         _model->createDoc(file);
     }
     void importDoc() override {}
-    void exportDoc() override {}
+    void exportDoc() override 
+    {
+        _model->exportDoc();
+    }
     void createShape(std::shared_ptr<Component> shape) override 
     {
         _model->createShape(shape);
-    }
+    }    
     void deleteShape(std::shared_ptr<Component> shape) override 
     {
         _model->deleteShape(shape);

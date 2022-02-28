@@ -23,12 +23,35 @@
  */
 class __BaseModel : public IModel
 {
-    std::list<IView*> _subs;
 protected:
-    std::unique_ptr<Component> component; 
+   
+    ///@brief Контейнер с подписчиками на событие update()
+    std::list<IView*> _subs; 
+
+    ///@brief Объект File с графическими примитивами
+    std::unique_ptr<File> component; 
 
 public:
-   
+    /**
+     * @brief Получить объект с именем файла
+     * 
+     * @return std::string 
+     */
+    std::string getFileName() const
+    {
+        return component->getName();
+    }
+
+    /**
+     * @brief Получить количество фигур объекта
+     * 
+     * @return std::size_t 
+     */
+    std::size_t getCountShapes() const
+    {
+        return component->getCountShaps();
+    }
+
     void connect(IView* view) override
     {
         _subs.push_back(view);
@@ -52,12 +75,34 @@ protected:
     ~__BaseModel(){}
 };
 
-class Editor : public __BaseModel
+class ExportSerializer : public IVisitor
 {
-
 public:
 
-    void draw() override
+    void visit(Dot* dot) override
+    {
+        std::cout << "Serializer Dot_"<< dot->getId() << std::endl;
+    }
+
+    void visit(Line* line) override
+    {
+        std::cout << "Serializer Line_" << line->getId() << std::endl;
+    }
+
+    void visit(File* file) override
+    {
+        std::cout << "Serializer File_" << file->getName() << std::endl;
+    }
+private:
+    ///@todo методы сериализации
+};
+
+class Editor : public __BaseModel
+{
+IVisitor * expo = new ExportSerializer;//std::unique_ptr
+public:
+
+    void draw() const override
     {
         component->draw();
     }
@@ -69,16 +114,17 @@ public:
         notification();
     }
     
-    void importDoc() override
+    void importDoc(const File& file) override
     {
         std::cout << "Model: import document" << std::endl;
+        component->SetObjectFile(file);
         notification();
     }
     
     void exportDoc() override
     {
         std::cout << "Model: Export document" << std::endl;
-        notification();        
+        component->save(expo);
     }
 
     void createShape(std::shared_ptr<Component> shape) override
@@ -89,14 +135,19 @@ public:
             component->createShape(shape);
             notification();
         }
-        else throw std::runtime_error("File not created");
+        else throw std::runtime_error("Create shape error: the file does not exist");
     }
     
     void deleteShape(std::shared_ptr<Component> shape) override
     {
         std::cout << "Shape: delete" << std::endl;
-        component->deleteShape(shape);
-        notification();
+        if(component)
+        {
+            component->deleteShape(shape);
+            notification();
+        }
+        else throw std::runtime_error("Delete shape error: the file does not exist");
     }
 
 };
+
