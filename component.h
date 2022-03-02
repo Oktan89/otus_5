@@ -18,11 +18,11 @@
 
 class File : public Component
 {
-    using type_shaps = std::shared_ptr<Component>;
+    using type_shaps = std::unique_ptr<Component>;
 
     std::size_t _id = id;
     std::string _file;
-    std::list<std::weak_ptr<Component>> _shaps;
+    std::list<type_shaps> _shaps;
    
 public:
     
@@ -45,36 +45,28 @@ public:
 
     void createShape(type_shaps cord)
     {
-        _shaps.push_back(cord);
+        _shaps.push_back(std::move(cord));
     }
 
-    void deleteShape(type_shaps shape)
+    bool deleteShape(std::size_t shape_id)
     {   
-        auto it = std::find_if(_shaps.cbegin(), _shaps.cend(), [shape](std::weak_ptr<Component> weak){
-            auto shap = weak.lock();
-            return shap == shape;
-        });
-        if(it != _shaps.end())
-            _shaps.erase(it);
-        else    
-            throw std::runtime_error("Shape not found");
-    }
-
-    void deleteShape(std::size_t shape_id)
-    {   
-        auto it = std::find_if(_shaps.cbegin(), _shaps.cend(), [shape_id](std::weak_ptr<Component> weak){
-            auto shap = weak.lock();
+        auto it = std::find_if(_shaps.cbegin(), _shaps.cend(), [&shape_id](const type_shaps& shap){
             return shap->getId() == shape_id;
         });
-        _shaps.erase(it);
+        if(it != _shaps.cend())
+        {
+            _shaps.erase(it);
+            return true;
+        }
+        else return false;
     }
 
-    void SetObjectFile(const File& file)
+    void SetObjectFile(File& file)
     {
         _file = file._file;
         _id = file._id;
         _shaps.clear();
-        _shaps = file._shaps;
+        _shaps = std::move(file._shaps);
     }
 
     void accept(IVisitor * vis) override
@@ -85,17 +77,9 @@ public:
     void save(IVisitor* save)
     {
         accept(save);
-        for(auto itr = _shaps.begin(); itr != _shaps.end(); ++itr)
+        for(const auto& s : _shaps)
         {
-            auto shap = itr->lock();
-            if(shap)
-            {
-                shap->accept(save);
-            }
-            else
-            {
-                _shaps.erase(itr);
-            }       
+            s->accept(save);      
         }
     }
 
@@ -104,18 +88,10 @@ public:
         ///@todo Место отрисовки документа
         std::cout << "Draw file " << _file << std::endl;
    
-        for(auto itr = _shaps.begin(); itr != _shaps.end(); ++itr)
+        for(const auto& s : _shaps)
         {
-            auto shap = itr->lock();
-            if(shap)
-            {
-                shap->draw();
-            }
-            else
-            {
-                _shaps.erase(itr);
-            }       
-        }
+            s->draw();      
+        }      
     }
 };
 

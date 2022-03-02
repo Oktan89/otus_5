@@ -23,12 +23,12 @@ public:
     {
         _model->exportDoc();
     }
-    void createShape(std::shared_ptr<Component> shape) override 
+    void createShape(std::unique_ptr<Component> shape) override 
     {
-        _model->createShape(shape);
+        _model->createShape(std::move(shape));
     }    
-    void deleteShape(std::shared_ptr<Component> shape) override 
+    void deleteShape(std::size_t id) override 
     {
-        _model->deleteShape(shape);
+        _model->deleteShape(id);
     }
 };

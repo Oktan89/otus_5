@@ -26,7 +26,7 @@ class __BaseModel : public IModel
 protected:
    
     ///@brief Контейнер с подписчиками на событие update()
-    std::list<IView*> _subs; 
+    std::list<std::weak_ptr<IView>> _subs; 
 
     ///@brief Объект File с графическими примитивами
     std::unique_ptr<File> component; 
@@ -52,22 +52,36 @@ public:
         return component->getCountShaps();
     }
 
-    void connect(IView* view) override
+    void connect(const std::shared_ptr<IView>& view) override
     {
-        _subs.push_back(view);
+        _subs.emplace_back(view);
     }
 
-    void disconnect(IView* view) override
+    void disconnect(const std::shared_ptr<IView>& view) override
     {
-        auto it = std::find(_subs.cbegin(), _subs.cend(), view);
-        _subs.erase(it);
+        auto it = std::find_if(_subs.cbegin(), _subs.cend(), [&](const std::weak_ptr<IView>& sub){
+            auto itr = sub.lock();
+            return itr == view;
+        });
+        if(it != _subs.end())
+            _subs.erase(it);
     }
 
 protected:
-    void notification() const override
+    void notification() override
     {
-        for(const auto& s : _subs)
-            s->update();
+        for(auto itr = _subs.begin(); itr != _subs.end(); ++itr)
+        {
+            auto sub = itr->lock();
+            if(sub)
+            {
+                sub->update();
+            }
+            else
+            {
+                _subs.erase(itr);
+            }
+        }
     }
 
      __BaseModel() = default;
@@ -99,8 +113,12 @@ private:
 
 class Editor : public __BaseModel
 {
-IVisitor * expo = new ExportSerializer;//std::unique_ptr
+//IVisitor * expo = new ExportSerializer;//std::unique_ptr
+std::unique_ptr<IVisitor> expo;
+
 public:
+
+    Editor(std::unique_ptr<IVisitor> _expo = std::make_unique<ExportSerializer>()) : expo(std::move(_expo)) {}
 
     void draw() const override
     {
@@ -114,7 +132,7 @@ public:
         notification();
     }
     
-    void importDoc(const File& file) override
+    void importDoc(File& file) override
     {
         std::cout << "Model: import document" << std::endl;
         component->SetObjectFile(file);
@@ -124,27 +142,27 @@ public:
     void exportDoc() override
     {
         std::cout << "Model: Export document" << std::endl;
-        component->save(expo);
+        component->save(expo.get());
     }
 
-    void createShape(std::shared_ptr<Component> shape) override
+    void createShape(std::unique_ptr<Component> shape) override
     {
         std::cout << "Shape: create" << std::endl;
         if(component)
         {
-            component->createShape(shape);
+            component->createShape(std::move(shape));
             notification();
         }
         else throw std::runtime_error("Create shape error: the file does not exist");
     }
     
-    void deleteShape(std::shared_ptr<Component> shape) override
+    void deleteShape(std::size_t id) override
     {
         std::cout << "Shape: delete" << std::endl;
         if(component)
         {
-            component->deleteShape(shape);
-            notification();
+            if(component->deleteShape(id))
+                notification();
         }
         else throw std::runtime_error("Delete shape error: the file does not exist");
     }
