@@ -1,8 +1,17 @@
+/**
+ * @file controller.h
+
+ * @author Ruslan Zhigalenko (r.zhigalenko@mail.ru)
+ * @brief Файл контроллера (MVC)
+ * @version 0.1
+ * @date 2022-03-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #pragma once
 #include "interface.h"
 #include "component.h"
-// #include "view.h"
-// #include "model.h"
 
 
 class Controller : public IController
@@ -18,7 +27,10 @@ public:
     {
         _model->createDoc(file);
     }
-    void importDoc() override {}
+    void importDoc(std::unique_ptr<File> file) override 
+    {
+        _model->importDoc(std::move(file));
+    }
     void exportDoc() override 
     {
         _model->exportDoc();

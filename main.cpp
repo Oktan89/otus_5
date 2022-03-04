@@ -23,7 +23,14 @@ int main(int, char**)
     cont->createShape(std::move(ln));
     cont->createShape(std::move(ln2));
     cont->deleteShape(7);
-    
     cont->exportDoc();
+
+    {
+        auto test = std::make_unique<File>("test.png");
+        test->createShape(std::make_unique<Dot>(10,12));
+        test->createShape(std::make_unique<Dot>(100,152));
+        cont->importDoc(std::move(test));
+    }
+    cont->createShape(std::make_unique<Line>(Dot{10, 4}, Dot{2, 4}));
     return 0;
 }
