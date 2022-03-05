@@ -1,7 +1,7 @@
 /**
  * @file interface.h
  * @author Ruslan Zhigalenko (r.zhigalenko@mail.ru)
- * @brief Файл интерфейсов
+ * @brief Файл интер
  * @version 0.1
  * @date 2022-03-05
  * 
@@ -59,7 +59,7 @@ struct IController
     virtual void createDoc(const std::string& file) = 0;
     virtual void importDoc(class std::unique_ptr<File>) = 0;
     virtual void exportDoc() = 0;
-    virtual void createShape(std::unique_ptr<Component>) = 0;
+    virtual std::size_t createShape(std::unique_ptr<Component>) = 0;
     virtual void deleteShape(std::size_t id) = 0;
 };
 
@@ -89,7 +89,7 @@ struct IModel
     virtual void createDoc(const std::string& file) = 0;
     virtual void importDoc(class std::unique_ptr<File>) = 0;
     virtual void exportDoc() = 0;
-    virtual void createShape(std::unique_ptr<Component>) = 0;
+    virtual std::size_t createShape(std::unique_ptr<Component>) = 0;
     virtual void deleteShape(std::size_t id) = 0;
     virtual void draw() const = 0;
 };

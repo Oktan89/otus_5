@@ -103,7 +103,7 @@ public:
      * 
      * @param file Объект подготовленного файла
      */
-    void SetObjectFile(std::unique_ptr<File> file)
+    void SetObjectFile(std::unique_ptr<File> file) noexcept
     {
         _file = file->_file;
         //_id = file->_id;

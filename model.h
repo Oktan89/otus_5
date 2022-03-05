@@ -198,8 +198,9 @@ public:
      * 
      * @param shape Графический приметив реализующий абстрактный класс Component
      */
-    void createShape(std::unique_ptr<Component> shape) override
+    std::size_t createShape(std::unique_ptr<Component> shape) override
     {
+        std::size_t id = shape->getId();
         std::cout << "Shape: create" << std::endl;
         if(component)
         {
@@ -207,6 +208,7 @@ public:
             notification();
         }
         else throw std::runtime_error("Create shape error: the file does not exist");
+        return id;
     }
     
     /**
