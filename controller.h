@@ -13,7 +13,10 @@
 #include "interface.h"
 #include "component.h"
 
-
+/**
+ * @brief Класс Контроллер
+ * 
+ */
 class Controller : public IController
 {
     using Imodel_type = std::shared_ptr<IModel>;
