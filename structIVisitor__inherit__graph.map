@@ -1,0 +1,4 @@
+<map id="IVisitor" name="IVisitor">
+<area shape="rect" id="node1" title="Интерфейс для работы с компанентами графического редактора" alt="" coords="29,5,92,32"/>
+<area shape="rect" id="node2" href="$classExportSerializer.html" title="Класс экспорта документа для всех типов (паттерн Посетитель)" alt="" coords="5,80,116,107"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Component" name="Component">
+<area shape="rect" id="node1" title="Абстрактный класс компонентов графичейского редактора" alt="" coords="49,5,137,32"/>
+<area shape="rect" id="node2" href="$classDot.html" title="Класс точка" alt="" coords="5,80,48,107"/>
+<area shape="rect" id="node3" href="$classFile.html" title="Класс File унаследованный от абстрактного класса Component." alt="" coords="72,80,115,107"/>
+<area shape="rect" id="node4" href="$classLine.html" title="Класс линия" alt="" coords="139,80,186,107"/>
+</map>

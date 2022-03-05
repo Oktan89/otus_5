@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Векторный редактор: Исходный файл component.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Векторный редактор
+   </div>
+   <div id="projectbrief">Макеты классов, отражающих структуру будущего проекта</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">component.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="component_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="interface_8h.html">interface.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classFile.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classFile.html">File</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structComponent.html">Component</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">using</span> type_shaps = std::unique_ptr&lt;Component&gt;;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    std::size_t _id = <a class="code hl_variable" href="structComponent.html#ac01ce259bbfd438f49fbb4af09e9beeb">id</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::string _file;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::list&lt;type_shaps&gt; _shaps;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>   </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classFile.html#a552e70fbe5a5041fc6745ec1e38abc6d">   38</a></span>    <a class="code hl_function" href="classFile.html#a552e70fbe5a5041fc6745ec1e38abc6d">File</a>(<span class="keyword">const</span> std::string&amp; file) : _file(file) {}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classFile.html#a4683b5e6170e051fb353712b4a94667e">   45</a></span>    std::size_t <a class="code hl_function" href="classFile.html#a4683b5e6170e051fb353712b4a94667e">getId</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> _id;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classFile.html#a2db229b94d7ea4d98e9c8b018053ca25">   56</a></span>    std::string <a class="code hl_function" href="classFile.html#a2db229b94d7ea4d98e9c8b018053ca25">getName</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">return</span> _file;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classFile.html#aa2cd0742647486b486ad18d6f0959eb6">   66</a></span>    std::size_t <a class="code hl_function" href="classFile.html#aa2cd0742647486b486ad18d6f0959eb6">getCountShaps</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">return</span> _shaps.size();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classFile.html#a0a84af90ff4baa5e154d26b20ee1e534">   76</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFile.html#a0a84af90ff4baa5e154d26b20ee1e534">createShape</a>(type_shaps shap)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        _shaps.push_back(std::move(shap));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classFile.html#a70f2945085595e0070c7c79faf89444f">   88</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classFile.html#a70f2945085595e0070c7c79faf89444f">deleteShape</a>(std::size_t shape_id)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    {   </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keyword">auto</span> it = std::find_if(_shaps.cbegin(), _shaps.cend(), [&amp;shape_id](<span class="keyword">const</span> type_shaps&amp; shap){</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            return shap-&gt;getId() == shape_id;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        });</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        <span class="keywordflow">if</span>(it != _shaps.cend())</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            _shaps.erase(it);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classFile.html#ae6f2c23c6908b8380f0cd1b8fdc2c9ec">  106</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFile.html#ae6f2c23c6908b8380f0cd1b8fdc2c9ec">SetObjectFile</a>(std::unique_ptr&lt;File&gt; file) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        _file = file-&gt;_file;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="comment">//_id = file-&gt;_id;</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        _shaps.swap(file-&gt;_shaps);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <a class="code hl_function" href="classFile.html#aa8d9397bb4fe742532478ff52327c0c9">reIndex</a>(<a class="code hl_variable" href="structComponent.html#ac01ce259bbfd438f49fbb4af09e9beeb">Component::id</a> = 0);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classFile.html#a748a6f2c4dacb0cd82ede2884caef85c">  120</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFile.html#a748a6f2c4dacb0cd82ede2884caef85c">accept</a>(<a class="code hl_struct" href="structIVisitor.html">IVisitor</a> * vis)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        vis-&gt;<a class="code hl_function" href="structIVisitor.html#a0437fb55350e869165d0b7691e64bb3e">visit</a>(<span class="keyword">this</span>);        </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classFile.html#a86eb28dec403d2bc40f69f5cec483589">  130</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFile.html#a86eb28dec403d2bc40f69f5cec483589">save</a>(<a class="code hl_struct" href="structIVisitor.html">IVisitor</a>* <a class="code hl_function" href="classFile.html#a86eb28dec403d2bc40f69f5cec483589">save</a>)</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <a class="code hl_function" href="classFile.html#a748a6f2c4dacb0cd82ede2884caef85c">accept</a>(<a class="code hl_function" href="classFile.html#a86eb28dec403d2bc40f69f5cec483589">save</a>);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; s : _shaps)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            s-&gt;accept(<a class="code hl_function" href="classFile.html#a86eb28dec403d2bc40f69f5cec483589">save</a>);      </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classFile.html#af4ddc1bd1022986869af5e88f6c0beb0">  143</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classFile.html#af4ddc1bd1022986869af5e88f6c0beb0">draw</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Draw file &quot;</span> &lt;&lt; _file &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>   </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; s : _shaps)</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            s-&gt;draw();      </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        }      </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="classFile.html#aa8d9397bb4fe742532478ff52327c0c9">  160</a></span>   <span class="keywordtype">void</span> <a class="code hl_function" href="classFile.html#aa8d9397bb4fe742532478ff52327c0c9">reIndex</a>(std::size_t&amp; n_id)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        _id = ++n_id;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; s : _shaps)</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>            s-&gt;reIndex(++n_id);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        }    </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>};</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classDot.html">  176</a></span><span class="keyword">class </span><a class="code hl_class" href="classDot.html">Dot</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structComponent.html">Component</a></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>{</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>   <a class="code hl_struct" href="structComponent_1_1coordinates.html">coordinates</a> _cord;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>   std::size_t _id = <a class="code hl_variable" href="structComponent.html#ac01ce259bbfd438f49fbb4af09e9beeb">id</a>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classDot.html#aee9addd933615637a133b9f9a657de7e">  187</a></span>    <a class="code hl_function" href="classDot.html#aee9addd933615637a133b9f9a657de7e">Dot</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structComponent_1_1coordinates.html">coordinates</a>&amp; cord) : _cord(cord) {}</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classDot.html#afcc1f44ec04d676cc76cbfb052afcb5c">  194</a></span>    <a class="code hl_function" href="classDot.html#afcc1f44ec04d676cc76cbfb052afcb5c">Dot</a>(std::size_t x, std::size_t y) : _cord(x, y) {}</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="classDot.html#ab546eb1665cb3886b8efdfc3c1fabfe3">  201</a></span>    std::size_t <a class="code hl_function" href="classDot.html#ab546eb1665cb3886b8efdfc3c1fabfe3">getId</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        <span class="keywordflow">return</span> _id;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="classDot.html#a57fb8ea87f882f75a263eb136bca6ac1">  206</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classDot.html#a57fb8ea87f882f75a263eb136bca6ac1">reIndex</a>(std::size_t&amp; <span class="keywordtype">id</span>)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        _id = <a class="code hl_variable" href="structComponent.html#ac01ce259bbfd438f49fbb4af09e9beeb">id</a>;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="classDot.html#a5d496f376b8d0b6c3176f1cd497ca1ae">  216</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classDot.html#a5d496f376b8d0b6c3176f1cd497ca1ae">accept</a>(<a class="code hl_struct" href="structIVisitor.html">IVisitor</a> * vis)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        vis-&gt;<a class="code hl_function" href="structIVisitor.html#a0437fb55350e869165d0b7691e64bb3e">visit</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    }</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="classDot.html#a79df5219d0f0098b0dbf87e6aa0326c3">  225</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classDot.html#a79df5219d0f0098b0dbf87e6aa0326c3">draw</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>       std::cout &lt;&lt; <span class="stringliteral">&quot;Draw Dot id &quot;</span>&lt;&lt;_id&lt;&lt;<span class="stringliteral">&quot;: (.) x&quot;</span> &lt;&lt; _cord.<a class="code hl_variable" href="structComponent_1_1coordinates.html#a55b8076b0fef8f78391a9ac258895c95">_x</a> &lt;&lt;<span class="stringliteral">&quot; y:&quot;</span>&lt;&lt; _cord.<a class="code hl_variable" href="structComponent_1_1coordinates.html#a1cd9e46c4e646cbe9e3bb1cfab699127">_y</a> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>};</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="classLine.html">  238</a></span><span class="keyword">class </span><a class="code hl_class" href="classLine.html">Line</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structComponent.html">Component</a></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>{</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>   <a class="code hl_class" href="classDot.html">Dot</a> _one;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>   <a class="code hl_class" href="classDot.html">Dot</a> _two;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>   std::size_t _id = <a class="code hl_variable" href="structComponent.html#ac01ce259bbfd438f49fbb4af09e9beeb">id</a>;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="classLine.html#aaabb4503bd9bafd730959486aadaae47">  251</a></span>    <a class="code hl_function" href="classLine.html#aaabb4503bd9bafd730959486aadaae47">Line</a>(<span class="keyword">const</span> <a class="code hl_class" href="classDot.html">Dot</a>&amp; one, <span class="keyword">const</span> <a class="code hl_class" href="classDot.html">Dot</a>&amp; two) : _one(one), _two(two) {}</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="classLine.html#a98acd13523242488cd457a781a9529b8">  258</a></span>    std::size_t <a class="code hl_function" href="classLine.html#a98acd13523242488cd457a781a9529b8">getId</a>()<span class="keyword"> const override</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <span class="keywordflow">return</span> _id;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    }</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="classLine.html#ad0a6bfd4cc477f71966342f19ec91a69">  264</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classLine.html#ad0a6bfd4cc477f71966342f19ec91a69">reIndex</a>(std::size_t&amp; <span class="keywordtype">id</span>)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        _id = <a class="code hl_variable" href="structComponent.html#ac01ce259bbfd438f49fbb4af09e9beeb">id</a>;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    }</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="classLine.html#a78dca0811559a90c8024b0f5930228a8">  274</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classLine.html#a78dca0811559a90c8024b0f5930228a8">accept</a>(<a class="code hl_struct" href="structIVisitor.html">IVisitor</a> * vis)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        vis-&gt;<a class="code hl_function" href="structIVisitor.html#a0437fb55350e869165d0b7691e64bb3e">visit</a>(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    }</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="classLine.html#a5bdc984dd5bff20c9fff8e7cf1dfbe1d">  283</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classLine.html#a5bdc984dd5bff20c9fff8e7cf1dfbe1d">draw</a>()<span class="keyword"> override</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>       std::cout &lt;&lt; <span class="stringliteral">&quot;Draw Line &quot;</span>&lt;&lt;_id&lt;&lt;<span class="stringliteral">&quot;: ------------&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>         _one.<a class="code hl_function" href="classDot.html#a79df5219d0f0098b0dbf87e6aa0326c3">draw</a>();</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>         _two.<a class="code hl_function" href="classDot.html#a79df5219d0f0098b0dbf87e6aa0326c3">draw</a>();</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    }</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>};</div>
+<div class="ttc" id="aclassDot_html"><div class="ttname"><a href="classDot.html">Dot</a></div><div class="ttdoc">Класс точка</div><div class="ttdef"><b>Definition:</b> component.h:177</div></div>
+<div class="ttc" id="aclassDot_html_a57fb8ea87f882f75a263eb136bca6ac1"><div class="ttname"><a href="classDot.html#a57fb8ea87f882f75a263eb136bca6ac1">Dot::reIndex</a></div><div class="ttdeci">void reIndex(std::size_t &amp;id) override</div><div class="ttdef"><b>Definition:</b> component.h:206</div></div>
+<div class="ttc" id="aclassDot_html_a5d496f376b8d0b6c3176f1cd497ca1ae"><div class="ttname"><a href="classDot.html#a5d496f376b8d0b6c3176f1cd497ca1ae">Dot::accept</a></div><div class="ttdeci">void accept(IVisitor *vis) override</div><div class="ttdoc">Метод начинающий сериализацию объекта</div><div class="ttdef"><b>Definition:</b> component.h:216</div></div>
+<div class="ttc" id="aclassDot_html_a79df5219d0f0098b0dbf87e6aa0326c3"><div class="ttname"><a href="classDot.html#a79df5219d0f0098b0dbf87e6aa0326c3">Dot::draw</a></div><div class="ttdeci">void draw() override</div><div class="ttdoc">Метод отрисовки точки в редакторе</div><div class="ttdef"><b>Definition:</b> component.h:225</div></div>
+<div class="ttc" id="aclassDot_html_ab546eb1665cb3886b8efdfc3c1fabfe3"><div class="ttname"><a href="classDot.html#ab546eb1665cb3886b8efdfc3c1fabfe3">Dot::getId</a></div><div class="ttdeci">std::size_t getId() const override</div><div class="ttdoc">Получить ID объекта</div><div class="ttdef"><b>Definition:</b> component.h:201</div></div>
+<div class="ttc" id="aclassDot_html_aee9addd933615637a133b9f9a657de7e"><div class="ttname"><a href="classDot.html#aee9addd933615637a133b9f9a657de7e">Dot::Dot</a></div><div class="ttdeci">Dot(const coordinates &amp;cord)</div><div class="ttdoc">Конструктор объекта Точка</div><div class="ttdef"><b>Definition:</b> component.h:187</div></div>
+<div class="ttc" id="aclassDot_html_afcc1f44ec04d676cc76cbfb052afcb5c"><div class="ttname"><a href="classDot.html#afcc1f44ec04d676cc76cbfb052afcb5c">Dot::Dot</a></div><div class="ttdeci">Dot(std::size_t x, std::size_t y)</div><div class="ttdoc">Конструктор объекта Точка</div><div class="ttdef"><b>Definition:</b> component.h:194</div></div>
+<div class="ttc" id="aclassFile_html"><div class="ttname"><a href="classFile.html">File</a></div><div class="ttdoc">Класс File унаследованный от абстрактного класса Component.</div><div class="ttdef"><b>Definition:</b> component.h:24</div></div>
+<div class="ttc" id="aclassFile_html_a0a84af90ff4baa5e154d26b20ee1e534"><div class="ttname"><a href="classFile.html#a0a84af90ff4baa5e154d26b20ee1e534">File::createShape</a></div><div class="ttdeci">void createShape(type_shaps shap)</div><div class="ttdoc">Создание графического приметива в фале</div><div class="ttdef"><b>Definition:</b> component.h:76</div></div>
+<div class="ttc" id="aclassFile_html_a2db229b94d7ea4d98e9c8b018053ca25"><div class="ttname"><a href="classFile.html#a2db229b94d7ea4d98e9c8b018053ca25">File::getName</a></div><div class="ttdeci">std::string getName() const</div><div class="ttdoc">Получить имя файла</div><div class="ttdef"><b>Definition:</b> component.h:56</div></div>
+<div class="ttc" id="aclassFile_html_a4683b5e6170e051fb353712b4a94667e"><div class="ttname"><a href="classFile.html#a4683b5e6170e051fb353712b4a94667e">File::getId</a></div><div class="ttdeci">std::size_t getId() const override</div><div class="ttdoc">Получить ID объекта</div><div class="ttdef"><b>Definition:</b> component.h:45</div></div>
+<div class="ttc" id="aclassFile_html_a552e70fbe5a5041fc6745ec1e38abc6d"><div class="ttname"><a href="classFile.html#a552e70fbe5a5041fc6745ec1e38abc6d">File::File</a></div><div class="ttdeci">File(const std::string &amp;file)</div><div class="ttdoc">Конструктор объекта File.</div><div class="ttdef"><b>Definition:</b> component.h:38</div></div>
+<div class="ttc" id="aclassFile_html_a70f2945085595e0070c7c79faf89444f"><div class="ttname"><a href="classFile.html#a70f2945085595e0070c7c79faf89444f">File::deleteShape</a></div><div class="ttdeci">bool deleteShape(std::size_t shape_id)</div><div class="ttdoc">Удаление графического примитива</div><div class="ttdef"><b>Definition:</b> component.h:88</div></div>
+<div class="ttc" id="aclassFile_html_a748a6f2c4dacb0cd82ede2884caef85c"><div class="ttname"><a href="classFile.html#a748a6f2c4dacb0cd82ede2884caef85c">File::accept</a></div><div class="ttdeci">void accept(IVisitor *vis) override</div><div class="ttdoc">Метод для патерна &quot;посетитель&quot;.</div><div class="ttdef"><b>Definition:</b> component.h:120</div></div>
+<div class="ttc" id="aclassFile_html_a86eb28dec403d2bc40f69f5cec483589"><div class="ttname"><a href="classFile.html#a86eb28dec403d2bc40f69f5cec483589">File::save</a></div><div class="ttdeci">void save(IVisitor *save)</div><div class="ttdoc">Метод для начала сериализации (патерн &quot;посетитель&quot;)</div><div class="ttdef"><b>Definition:</b> component.h:130</div></div>
+<div class="ttc" id="aclassFile_html_aa2cd0742647486b486ad18d6f0959eb6"><div class="ttname"><a href="classFile.html#aa2cd0742647486b486ad18d6f0959eb6">File::getCountShaps</a></div><div class="ttdeci">std::size_t getCountShaps() const</div><div class="ttdoc">Получить колличество графических примитивов</div><div class="ttdef"><b>Definition:</b> component.h:66</div></div>
+<div class="ttc" id="aclassFile_html_aa8d9397bb4fe742532478ff52327c0c9"><div class="ttname"><a href="classFile.html#aa8d9397bb4fe742532478ff52327c0c9">File::reIndex</a></div><div class="ttdeci">void reIndex(std::size_t &amp;n_id) override</div><div class="ttdoc">Метод переиндексации объектов после импорта</div><div class="ttdef"><b>Definition:</b> component.h:160</div></div>
+<div class="ttc" id="aclassFile_html_ae6f2c23c6908b8380f0cd1b8fdc2c9ec"><div class="ttname"><a href="classFile.html#ae6f2c23c6908b8380f0cd1b8fdc2c9ec">File::SetObjectFile</a></div><div class="ttdeci">void SetObjectFile(std::unique_ptr&lt; File &gt; file) noexcept</div><div class="ttdoc">Импорт файла</div><div class="ttdef"><b>Definition:</b> component.h:106</div></div>
+<div class="ttc" id="aclassFile_html_af4ddc1bd1022986869af5e88f6c0beb0"><div class="ttname"><a href="classFile.html#af4ddc1bd1022986869af5e88f6c0beb0">File::draw</a></div><div class="ttdeci">void draw() override</div><div class="ttdoc">Метод ототрисоки объектов редактора (патерн &quot;компоновщик&quot;)</div><div class="ttdef"><b>Definition:</b> component.h:143</div></div>
+<div class="ttc" id="aclassLine_html"><div class="ttname"><a href="classLine.html">Line</a></div><div class="ttdoc">Класс линия</div><div class="ttdef"><b>Definition:</b> component.h:239</div></div>
+<div class="ttc" id="aclassLine_html_a5bdc984dd5bff20c9fff8e7cf1dfbe1d"><div class="ttname"><a href="classLine.html#a5bdc984dd5bff20c9fff8e7cf1dfbe1d">Line::draw</a></div><div class="ttdeci">void draw() override</div><div class="ttdoc">Метод отрисовки линии в редакторе</div><div class="ttdef"><b>Definition:</b> component.h:283</div></div>
+<div class="ttc" id="aclassLine_html_a78dca0811559a90c8024b0f5930228a8"><div class="ttname"><a href="classLine.html#a78dca0811559a90c8024b0f5930228a8">Line::accept</a></div><div class="ttdeci">void accept(IVisitor *vis) override</div><div class="ttdoc">Метод начинающий сериализацию объекта</div><div class="ttdef"><b>Definition:</b> component.h:274</div></div>
+<div class="ttc" id="aclassLine_html_a98acd13523242488cd457a781a9529b8"><div class="ttname"><a href="classLine.html#a98acd13523242488cd457a781a9529b8">Line::getId</a></div><div class="ttdeci">std::size_t getId() const override</div><div class="ttdoc">Получить ID объекта</div><div class="ttdef"><b>Definition:</b> component.h:258</div></div>
+<div class="ttc" id="aclassLine_html_aaabb4503bd9bafd730959486aadaae47"><div class="ttname"><a href="classLine.html#aaabb4503bd9bafd730959486aadaae47">Line::Line</a></div><div class="ttdeci">Line(const Dot &amp;one, const Dot &amp;two)</div><div class="ttdoc">Конструктор Линии</div><div class="ttdef"><b>Definition:</b> component.h:251</div></div>
+<div class="ttc" id="aclassLine_html_ad0a6bfd4cc477f71966342f19ec91a69"><div class="ttname"><a href="classLine.html#ad0a6bfd4cc477f71966342f19ec91a69">Line::reIndex</a></div><div class="ttdeci">void reIndex(std::size_t &amp;id) override</div><div class="ttdef"><b>Definition:</b> component.h:264</div></div>
+<div class="ttc" id="ainterface_8h_html"><div class="ttname"><a href="interface_8h.html">interface.h</a></div><div class="ttdoc">Файл интер</div></div>
+<div class="ttc" id="astructComponent_1_1coordinates_html"><div class="ttname"><a href="structComponent_1_1coordinates.html">Component::coordinates</a></div><div class="ttdef"><b>Definition:</b> interface.h:34</div></div>
+<div class="ttc" id="astructComponent_1_1coordinates_html_a1cd9e46c4e646cbe9e3bb1cfab699127"><div class="ttname"><a href="structComponent_1_1coordinates.html#a1cd9e46c4e646cbe9e3bb1cfab699127">Component::coordinates::_y</a></div><div class="ttdeci">double _y</div><div class="ttdef"><b>Definition:</b> interface.h:36</div></div>
+<div class="ttc" id="astructComponent_1_1coordinates_html_a55b8076b0fef8f78391a9ac258895c95"><div class="ttname"><a href="structComponent_1_1coordinates.html#a55b8076b0fef8f78391a9ac258895c95">Component::coordinates::_x</a></div><div class="ttdeci">double _x</div><div class="ttdef"><b>Definition:</b> interface.h:35</div></div>
+<div class="ttc" id="astructComponent_html"><div class="ttname"><a href="structComponent.html">Component</a></div><div class="ttdoc">Абстрактный класс компонентов графичейского редактора</div><div class="ttdef"><b>Definition:</b> interface.h:31</div></div>
+<div class="ttc" id="astructComponent_html_ac01ce259bbfd438f49fbb4af09e9beeb"><div class="ttname"><a href="structComponent.html#ac01ce259bbfd438f49fbb4af09e9beeb">Component::id</a></div><div class="ttdeci">static std::size_t id</div><div class="ttdoc">статический член задающий id объекта</div><div class="ttdef"><b>Definition:</b> interface.h:32</div></div>
+<div class="ttc" id="astructIVisitor_html"><div class="ttname"><a href="structIVisitor.html">IVisitor</a></div><div class="ttdoc">Интерфейс для работы с компанентами графического редактора</div><div class="ttdef"><b>Definition:</b> interface.h:19</div></div>
+<div class="ttc" id="astructIVisitor_html_a0437fb55350e869165d0b7691e64bb3e"><div class="ttname"><a href="structIVisitor.html#a0437fb55350e869165d0b7691e64bb3e">IVisitor::visit</a></div><div class="ttdeci">virtual void visit(class Dot *)=0</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

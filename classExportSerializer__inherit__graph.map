@@ -1,0 +1,4 @@
+<map id="ExportSerializer" name="ExportSerializer">
+<area shape="rect" id="node1" title="Класс экспорта документа для всех типов (паттерн Посетитель)" alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node2" href="$structIVisitor.html" title="Интерфейс для работы с компанентами графического редактора" alt="" coords="29,5,92,32"/>
+</map>

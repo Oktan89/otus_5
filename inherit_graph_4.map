@@ -1,0 +1,4 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="node1" href="$structIVisitor.html" title="Интерфейс для работы с компанентами графического редактора" alt="" coords="5,5,68,32"/>
+<area shape="rect" id="node2" href="$classExportSerializer.html" title="Класс экспорта документа для всех типов (паттерн Посетитель)" alt="" coords="116,5,227,32"/>
+</map>

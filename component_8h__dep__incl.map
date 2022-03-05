@@ -1,0 +1,5 @@
+<map id="component.h" name="component.h">
+<area shape="rect" id="node1" title="Файл компонентов" alt="" coords="49,5,145,32"/>
+<area shape="rect" id="node2" href="$controller_8h.html" title="Файл контроллера (MVC)" alt="" coords="5,80,91,107"/>
+<area shape="rect" id="node3" href="$model_8h.html" title="Файл модели (MVC)" alt="" coords="115,80,181,107"/>
+</map>

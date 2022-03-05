@@ -1,0 +1,6 @@
+<map id="Иерархия классов. Графический вид." name="Иерархия классов. Графический вид.">
+<area shape="rect" id="node1" href="$structComponent.html" title="Абстрактный класс компонентов графичейского редактора" alt="" coords="5,56,93,83"/>
+<area shape="rect" id="node2" href="$classDot.html" title="Класс точка" alt="" coords="143,5,186,32"/>
+<area shape="rect" id="node3" href="$classFile.html" title="Класс File унаследованный от абстрактного класса Component." alt="" coords="143,56,186,83"/>
+<area shape="rect" id="node4" href="$classLine.html" title="Класс линия" alt="" coords="141,107,188,133"/>
+</map>

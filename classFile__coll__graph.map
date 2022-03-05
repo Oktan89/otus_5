@@ -1,0 +1,4 @@
+<map id="File" name="File">
+<area shape="rect" id="node1" title="Класс File унаследованный от абстрактного класса Component." alt="" coords="28,80,71,107"/>
+<area shape="rect" id="node2" href="$structComponent.html" title="Абстрактный класс компонентов графичейского редактора" alt="" coords="5,5,93,32"/>
+</map>

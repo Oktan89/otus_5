@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Векторный редактор: Исходный файл interface.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Векторный редактор
+   </div>
+   <div id="projectbrief">Макеты классов, отражающих структуру будущего проекта</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">interface.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="interface_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structIVisitor.html">   18</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structIVisitor.html">IVisitor</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structIVisitor.html#a0437fb55350e869165d0b7691e64bb3e">   20</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIVisitor.html#a0437fb55350e869165d0b7691e64bb3e">visit</a>(<span class="keyword">class</span> <a class="code hl_class" href="classDot.html">Dot</a>*) = 0;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structIVisitor.html#aaa2e606de979121c9326c47838135648">   21</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIVisitor.html#aaa2e606de979121c9326c47838135648">visit</a>(<span class="keyword">class</span> <a class="code hl_class" href="classLine.html">Line</a>*) = 0;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structIVisitor.html#aaff6cce780bc6cee293e6d3b200c905d">   22</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIVisitor.html#aaff6cce780bc6cee293e6d3b200c905d">visit</a>(<span class="keyword">class</span> <a class="code hl_class" href="classFile.html">File</a>*) = 0;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structIVisitor.html#af0d2677553ffa623f1f368bc4eb2c340">   23</a></span>    <a class="code hl_function" href="structIVisitor.html#af0d2677553ffa623f1f368bc4eb2c340">~IVisitor</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structComponent.html">   30</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structComponent.html">Component</a></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structComponent.html#ac01ce259bbfd438f49fbb4af09e9beeb">   32</a></span>    <span class="keyword">static</span> std::size_t <a class="code hl_variable" href="structComponent.html#ac01ce259bbfd438f49fbb4af09e9beeb">id</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structComponent_1_1coordinates.html">   33</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structComponent_1_1coordinates.html">coordinates</a></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structComponent_1_1coordinates.html#a55b8076b0fef8f78391a9ac258895c95">   35</a></span>        <span class="keywordtype">double</span> <a class="code hl_variable" href="structComponent_1_1coordinates.html#a55b8076b0fef8f78391a9ac258895c95">_x</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structComponent_1_1coordinates.html#a1cd9e46c4e646cbe9e3bb1cfab699127">   36</a></span>        <span class="keywordtype">double</span> <a class="code hl_variable" href="structComponent_1_1coordinates.html#a1cd9e46c4e646cbe9e3bb1cfab699127">_y</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structComponent_1_1coordinates.html#a159694efa9dda24dd71a85e6e1821b5f">   37</a></span>        <a class="code hl_function" href="structComponent_1_1coordinates.html#a159694efa9dda24dd71a85e6e1821b5f">coordinates</a>(<span class="keywordtype">double</span> x = 0, <span class="keywordtype">double</span> y = 0) : <a class="code hl_variable" href="structComponent_1_1coordinates.html#a55b8076b0fef8f78391a9ac258895c95">_x</a>(x), <a class="code hl_variable" href="structComponent_1_1coordinates.html#a1cd9e46c4e646cbe9e3bb1cfab699127">_y</a>(y) {}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    };</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structComponent.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">   39</a></span>    <a class="code hl_function" href="structComponent.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component</a>()</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        ++<a class="code hl_variable" href="structComponent.html#ac01ce259bbfd438f49fbb4af09e9beeb">id</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">   43</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="structComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">~Component</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structComponent.html#ae09cb6b802a3c5da8064e7d462066d99">   44</a></span>    <span class="keyword">virtual</span> std::size_t <a class="code hl_function" href="structComponent.html#ae09cb6b802a3c5da8064e7d462066d99">getId</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structComponent.html#a72acbf3052f9b98e87859338cea950b7">   45</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structComponent.html#a72acbf3052f9b98e87859338cea950b7">reIndex</a>(std::size_t&amp;) = 0;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structComponent.html#a885bbe6150910bbb45a5a2939001b07f">   46</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structComponent.html#a885bbe6150910bbb45a5a2939001b07f">draw</a>()  = 0;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structComponent.html#a65b4d23872cca850481dbcbd8d6dac83">   47</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structComponent.html#a65b4d23872cca850481dbcbd8d6dac83">accept</a>(<a class="code hl_struct" href="structIVisitor.html">IVisitor</a>*) = 0;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>std::size_t <a class="code hl_variable" href="structComponent.html#ac01ce259bbfd438f49fbb4af09e9beeb">Component::id</a> = 0; </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structIController.html">   56</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structIController.html">IController</a></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structIController.html#adbe8a8556fee242cfdb0cc251ebd1a81">   58</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="structIController.html#adbe8a8556fee242cfdb0cc251ebd1a81">~IController</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="structIController.html#a8f10f3b8de364ccab547dc43519ff9b3">   59</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIController.html#a8f10f3b8de364ccab547dc43519ff9b3">createDoc</a>(<span class="keyword">const</span> std::string&amp; file) = 0;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structIController.html#ab700fd11dc2b2786ce6af2e9588803de">   60</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIController.html#ab700fd11dc2b2786ce6af2e9588803de">importDoc</a>(<span class="keyword">class</span> std::unique_ptr&lt;File&gt;) = 0;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structIController.html#a01cbdd0819071054e08806eb20273158">   61</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIController.html#a01cbdd0819071054e08806eb20273158">exportDoc</a>() = 0;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structIController.html#af358d89c5ce2f38f0d638cf34740d1da">   62</a></span>    <span class="keyword">virtual</span> std::size_t <a class="code hl_function" href="structIController.html#af358d89c5ce2f38f0d638cf34740d1da">createShape</a>(std::unique_ptr&lt;Component&gt;) = 0;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structIController.html#a87b83c1ad9cb908d135168797f529f74">   63</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIController.html#a87b83c1ad9cb908d135168797f529f74">deleteShape</a>(std::size_t <span class="keywordtype">id</span>) = 0;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structIView.html">   70</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structIView.html">IView</a></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structIView.html#abc49afb1ca6e385987b18ae1c8195716">   72</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="structIView.html#abc49afb1ca6e385987b18ae1c8195716">~IView</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structIView.html#a1e1898e713305591453b876080b38299">   73</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIView.html#a1e1898e713305591453b876080b38299">setController</a>(<span class="keyword">const</span> std::shared_ptr&lt;IController&gt;&amp;) = 0;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structIView.html#a038e7a883050182497d11ef2dba0441a">   74</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIView.html#a038e7a883050182497d11ef2dba0441a">update</a>() = 0;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structIModel.html">   83</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structIModel.html">IModel</a></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structIModel.html#aae3da291eb4410de6965ae73da65cd77">   85</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="structIModel.html#aae3da291eb4410de6965ae73da65cd77">~IModel</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structIModel.html#a17f88a1166d57269d4f6d6eb9654ce1c">   86</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIModel.html#a17f88a1166d57269d4f6d6eb9654ce1c">connect</a>(<span class="keyword">const</span> std::shared_ptr&lt;IView&gt;&amp; view) = 0;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structIModel.html#a655cb4e039bd6e8e4518284c9f266298">   87</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIModel.html#a655cb4e039bd6e8e4518284c9f266298">disconnect</a>(<span class="keyword">const</span> std::shared_ptr&lt;IView&gt;&amp; view) = 0;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="structIModel.html#a0de2728601ebb0f79cdbc780d1e0250c">   88</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIModel.html#a0de2728601ebb0f79cdbc780d1e0250c">notification</a>() = 0;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structIModel.html#a8497db05d1b32ce87db367e677774835">   89</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIModel.html#a8497db05d1b32ce87db367e677774835">createDoc</a>(<span class="keyword">const</span> std::string&amp; file) = 0;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structIModel.html#a49eae87eceddd4be18e11b04660c61ac">   90</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIModel.html#a49eae87eceddd4be18e11b04660c61ac">importDoc</a>(<span class="keyword">class</span> std::unique_ptr&lt;File&gt;) = 0;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structIModel.html#a9531b4bfd3ebda6eed4d4e52c3fb712a">   91</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIModel.html#a9531b4bfd3ebda6eed4d4e52c3fb712a">exportDoc</a>() = 0;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="structIModel.html#a70ec7dbd767fc5663be88709aff1b157">   92</a></span>    <span class="keyword">virtual</span> std::size_t <a class="code hl_function" href="structIModel.html#a70ec7dbd767fc5663be88709aff1b157">createShape</a>(std::unique_ptr&lt;Component&gt;) = 0;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="structIModel.html#a645ace6e73216b540653e0ac65cc7037">   93</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIModel.html#a645ace6e73216b540653e0ac65cc7037">deleteShape</a>(std::size_t <span class="keywordtype">id</span>) = 0;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="structIModel.html#a1e605419f35b18fac13ed407db6391b6">   94</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structIModel.html#a1e605419f35b18fac13ed407db6391b6">draw</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>};</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="ttc" id="aclassDot_html"><div class="ttname"><a href="classDot.html">Dot</a></div><div class="ttdoc">Класс точка</div><div class="ttdef"><b>Definition:</b> component.h:177</div></div>
+<div class="ttc" id="aclassFile_html"><div class="ttname"><a href="classFile.html">File</a></div><div class="ttdoc">Класс File унаследованный от абстрактного класса Component.</div><div class="ttdef"><b>Definition:</b> component.h:24</div></div>
+<div class="ttc" id="aclassLine_html"><div class="ttname"><a href="classLine.html">Line</a></div><div class="ttdoc">Класс линия</div><div class="ttdef"><b>Definition:</b> component.h:239</div></div>
+<div class="ttc" id="astructComponent_1_1coordinates_html"><div class="ttname"><a href="structComponent_1_1coordinates.html">Component::coordinates</a></div><div class="ttdef"><b>Definition:</b> interface.h:34</div></div>
+<div class="ttc" id="astructComponent_1_1coordinates_html_a159694efa9dda24dd71a85e6e1821b5f"><div class="ttname"><a href="structComponent_1_1coordinates.html#a159694efa9dda24dd71a85e6e1821b5f">Component::coordinates::coordinates</a></div><div class="ttdeci">coordinates(double x=0, double y=0)</div><div class="ttdef"><b>Definition:</b> interface.h:37</div></div>
+<div class="ttc" id="astructComponent_1_1coordinates_html_a1cd9e46c4e646cbe9e3bb1cfab699127"><div class="ttname"><a href="structComponent_1_1coordinates.html#a1cd9e46c4e646cbe9e3bb1cfab699127">Component::coordinates::_y</a></div><div class="ttdeci">double _y</div><div class="ttdef"><b>Definition:</b> interface.h:36</div></div>
+<div class="ttc" id="astructComponent_1_1coordinates_html_a55b8076b0fef8f78391a9ac258895c95"><div class="ttname"><a href="structComponent_1_1coordinates.html#a55b8076b0fef8f78391a9ac258895c95">Component::coordinates::_x</a></div><div class="ttdeci">double _x</div><div class="ttdef"><b>Definition:</b> interface.h:35</div></div>
+<div class="ttc" id="astructComponent_html"><div class="ttname"><a href="structComponent.html">Component</a></div><div class="ttdoc">Абстрактный класс компонентов графичейского редактора</div><div class="ttdef"><b>Definition:</b> interface.h:31</div></div>
+<div class="ttc" id="astructComponent_html_a65b4d23872cca850481dbcbd8d6dac83"><div class="ttname"><a href="structComponent.html#a65b4d23872cca850481dbcbd8d6dac83">Component::accept</a></div><div class="ttdeci">virtual void accept(IVisitor *)=0</div></div>
+<div class="ttc" id="astructComponent_html_a72acbf3052f9b98e87859338cea950b7"><div class="ttname"><a href="structComponent.html#a72acbf3052f9b98e87859338cea950b7">Component::reIndex</a></div><div class="ttdeci">virtual void reIndex(std::size_t &amp;)=0</div></div>
+<div class="ttc" id="astructComponent_html_a8775db6d1a2c1afc2e77cd3c8f39da6f"><div class="ttname"><a href="structComponent.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component::Component</a></div><div class="ttdeci">Component()</div><div class="ttdef"><b>Definition:</b> interface.h:39</div></div>
+<div class="ttc" id="astructComponent_html_a885bbe6150910bbb45a5a2939001b07f"><div class="ttname"><a href="structComponent.html#a885bbe6150910bbb45a5a2939001b07f">Component::draw</a></div><div class="ttdeci">virtual void draw()=0</div></div>
+<div class="ttc" id="astructComponent_html_ac01ce259bbfd438f49fbb4af09e9beeb"><div class="ttname"><a href="structComponent.html#ac01ce259bbfd438f49fbb4af09e9beeb">Component::id</a></div><div class="ttdeci">static std::size_t id</div><div class="ttdoc">статический член задающий id объекта</div><div class="ttdef"><b>Definition:</b> interface.h:32</div></div>
+<div class="ttc" id="astructComponent_html_ad82d7393e339c1b19cc17a0d55b5674d"><div class="ttname"><a href="structComponent.html#ad82d7393e339c1b19cc17a0d55b5674d">Component::~Component</a></div><div class="ttdeci">virtual ~Component()=default</div></div>
+<div class="ttc" id="astructComponent_html_ae09cb6b802a3c5da8064e7d462066d99"><div class="ttname"><a href="structComponent.html#ae09cb6b802a3c5da8064e7d462066d99">Component::getId</a></div><div class="ttdeci">virtual std::size_t getId() const =0</div></div>
+<div class="ttc" id="astructIController_html"><div class="ttname"><a href="structIController.html">IController</a></div><div class="ttdoc">Интерфейс контроллера</div><div class="ttdef"><b>Definition:</b> interface.h:57</div></div>
+<div class="ttc" id="astructIController_html_a01cbdd0819071054e08806eb20273158"><div class="ttname"><a href="structIController.html#a01cbdd0819071054e08806eb20273158">IController::exportDoc</a></div><div class="ttdeci">virtual void exportDoc()=0</div></div>
+<div class="ttc" id="astructIController_html_a87b83c1ad9cb908d135168797f529f74"><div class="ttname"><a href="structIController.html#a87b83c1ad9cb908d135168797f529f74">IController::deleteShape</a></div><div class="ttdeci">virtual void deleteShape(std::size_t id)=0</div></div>
+<div class="ttc" id="astructIController_html_a8f10f3b8de364ccab547dc43519ff9b3"><div class="ttname"><a href="structIController.html#a8f10f3b8de364ccab547dc43519ff9b3">IController::createDoc</a></div><div class="ttdeci">virtual void createDoc(const std::string &amp;file)=0</div></div>
+<div class="ttc" id="astructIController_html_ab700fd11dc2b2786ce6af2e9588803de"><div class="ttname"><a href="structIController.html#ab700fd11dc2b2786ce6af2e9588803de">IController::importDoc</a></div><div class="ttdeci">virtual void importDoc(class std::unique_ptr&lt; File &gt;)=0</div></div>
+<div class="ttc" id="astructIController_html_adbe8a8556fee242cfdb0cc251ebd1a81"><div class="ttname"><a href="structIController.html#adbe8a8556fee242cfdb0cc251ebd1a81">IController::~IController</a></div><div class="ttdeci">virtual ~IController()=default</div></div>
+<div class="ttc" id="astructIController_html_af358d89c5ce2f38f0d638cf34740d1da"><div class="ttname"><a href="structIController.html#af358d89c5ce2f38f0d638cf34740d1da">IController::createShape</a></div><div class="ttdeci">virtual std::size_t createShape(std::unique_ptr&lt; Component &gt;)=0</div></div>
+<div class="ttc" id="astructIModel_html"><div class="ttname"><a href="structIModel.html">IModel</a></div><div class="ttdoc">Интерфейс модели</div><div class="ttdef"><b>Definition:</b> interface.h:84</div></div>
+<div class="ttc" id="astructIModel_html_a0de2728601ebb0f79cdbc780d1e0250c"><div class="ttname"><a href="structIModel.html#a0de2728601ebb0f79cdbc780d1e0250c">IModel::notification</a></div><div class="ttdeci">virtual void notification()=0</div></div>
+<div class="ttc" id="astructIModel_html_a17f88a1166d57269d4f6d6eb9654ce1c"><div class="ttname"><a href="structIModel.html#a17f88a1166d57269d4f6d6eb9654ce1c">IModel::connect</a></div><div class="ttdeci">virtual void connect(const std::shared_ptr&lt; IView &gt; &amp;view)=0</div></div>
+<div class="ttc" id="astructIModel_html_a1e605419f35b18fac13ed407db6391b6"><div class="ttname"><a href="structIModel.html#a1e605419f35b18fac13ed407db6391b6">IModel::draw</a></div><div class="ttdeci">virtual void draw() const =0</div></div>
+<div class="ttc" id="astructIModel_html_a49eae87eceddd4be18e11b04660c61ac"><div class="ttname"><a href="structIModel.html#a49eae87eceddd4be18e11b04660c61ac">IModel::importDoc</a></div><div class="ttdeci">virtual void importDoc(class std::unique_ptr&lt; File &gt;)=0</div></div>
+<div class="ttc" id="astructIModel_html_a645ace6e73216b540653e0ac65cc7037"><div class="ttname"><a href="structIModel.html#a645ace6e73216b540653e0ac65cc7037">IModel::deleteShape</a></div><div class="ttdeci">virtual void deleteShape(std::size_t id)=0</div></div>
+<div class="ttc" id="astructIModel_html_a655cb4e039bd6e8e4518284c9f266298"><div class="ttname"><a href="structIModel.html#a655cb4e039bd6e8e4518284c9f266298">IModel::disconnect</a></div><div class="ttdeci">virtual void disconnect(const std::shared_ptr&lt; IView &gt; &amp;view)=0</div></div>
+<div class="ttc" id="astructIModel_html_a70ec7dbd767fc5663be88709aff1b157"><div class="ttname"><a href="structIModel.html#a70ec7dbd767fc5663be88709aff1b157">IModel::createShape</a></div><div class="ttdeci">virtual std::size_t createShape(std::unique_ptr&lt; Component &gt;)=0</div></div>
+<div class="ttc" id="astructIModel_html_a8497db05d1b32ce87db367e677774835"><div class="ttname"><a href="structIModel.html#a8497db05d1b32ce87db367e677774835">IModel::createDoc</a></div><div class="ttdeci">virtual void createDoc(const std::string &amp;file)=0</div></div>
+<div class="ttc" id="astructIModel_html_a9531b4bfd3ebda6eed4d4e52c3fb712a"><div class="ttname"><a href="structIModel.html#a9531b4bfd3ebda6eed4d4e52c3fb712a">IModel::exportDoc</a></div><div class="ttdeci">virtual void exportDoc()=0</div></div>
+<div class="ttc" id="astructIModel_html_aae3da291eb4410de6965ae73da65cd77"><div class="ttname"><a href="structIModel.html#aae3da291eb4410de6965ae73da65cd77">IModel::~IModel</a></div><div class="ttdeci">virtual ~IModel()=default</div></div>
+<div class="ttc" id="astructIView_html"><div class="ttname"><a href="structIView.html">IView</a></div><div class="ttdoc">Интерфейс модели</div><div class="ttdef"><b>Definition:</b> interface.h:71</div></div>
+<div class="ttc" id="astructIView_html_a038e7a883050182497d11ef2dba0441a"><div class="ttname"><a href="structIView.html#a038e7a883050182497d11ef2dba0441a">IView::update</a></div><div class="ttdeci">virtual void update()=0</div></div>
+<div class="ttc" id="astructIView_html_a1e1898e713305591453b876080b38299"><div class="ttname"><a href="structIView.html#a1e1898e713305591453b876080b38299">IView::setController</a></div><div class="ttdeci">virtual void setController(const std::shared_ptr&lt; IController &gt; &amp;)=0</div></div>
+<div class="ttc" id="astructIView_html_abc49afb1ca6e385987b18ae1c8195716"><div class="ttname"><a href="structIView.html#abc49afb1ca6e385987b18ae1c8195716">IView::~IView</a></div><div class="ttdeci">virtual ~IView()=default</div></div>
+<div class="ttc" id="astructIVisitor_html"><div class="ttname"><a href="structIVisitor.html">IVisitor</a></div><div class="ttdoc">Интерфейс для работы с компанентами графического редактора</div><div class="ttdef"><b>Definition:</b> interface.h:19</div></div>
+<div class="ttc" id="astructIVisitor_html_a0437fb55350e869165d0b7691e64bb3e"><div class="ttname"><a href="structIVisitor.html#a0437fb55350e869165d0b7691e64bb3e">IVisitor::visit</a></div><div class="ttdeci">virtual void visit(class Dot *)=0</div></div>
+<div class="ttc" id="astructIVisitor_html_aaa2e606de979121c9326c47838135648"><div class="ttname"><a href="structIVisitor.html#aaa2e606de979121c9326c47838135648">IVisitor::visit</a></div><div class="ttdeci">virtual void visit(class Line *)=0</div></div>
+<div class="ttc" id="astructIVisitor_html_aaff6cce780bc6cee293e6d3b200c905d"><div class="ttname"><a href="structIVisitor.html#aaff6cce780bc6cee293e6d3b200c905d">IVisitor::visit</a></div><div class="ttdeci">virtual void visit(class File *)=0</div></div>
+<div class="ttc" id="astructIVisitor_html_af0d2677553ffa623f1f368bc4eb2c340"><div class="ttname"><a href="structIVisitor.html#af0d2677553ffa623f1f368bc4eb2c340">IVisitor::~IVisitor</a></div><div class="ttdeci">~IVisitor()=default</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

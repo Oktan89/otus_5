@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Векторный редактор: Структура IVisitor</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Векторный редактор
+   </div>
+   <div id="projectbrief">Макеты классов, отражающих структуру будущего проекта</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="structIVisitor-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Структура IVisitor<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Интерфейс для работы с компанентами графического редактора  
+ <a href="structIVisitor.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="interface_8h_source.html">interface.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:IVisitor:</div>
+<div class="dyncontent">
+<div class="center"><img src="structIVisitor__inherit__graph.png" border="0" usemap="#aIVisitor_inherit__map" alt="Inheritance graph"/></div>
+<map name="aIVisitor_inherit__map" id="aIVisitor_inherit__map">
+<area shape="rect" title="Интерфейс для работы с компанентами графического редактора" alt="" coords="29,5,92,32"/>
+<area shape="rect" href="classExportSerializer.html" title="Класс экспорта документа для всех типов (паттерн Посетитель)" alt="" coords="5,80,116,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a0437fb55350e869165d0b7691e64bb3e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIVisitor.html#a0437fb55350e869165d0b7691e64bb3e">visit</a> (class <a class="el" href="classDot.html">Dot</a> *)=0</td></tr>
+<tr class="separator:a0437fb55350e869165d0b7691e64bb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa2e606de979121c9326c47838135648"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIVisitor.html#aaa2e606de979121c9326c47838135648">visit</a> (class <a class="el" href="classLine.html">Line</a> *)=0</td></tr>
+<tr class="separator:aaa2e606de979121c9326c47838135648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaff6cce780bc6cee293e6d3b200c905d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIVisitor.html#aaff6cce780bc6cee293e6d3b200c905d">visit</a> (class <a class="el" href="classFile.html">File</a> *)=0</td></tr>
+<tr class="separator:aaff6cce780bc6cee293e6d3b200c905d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0d2677553ffa623f1f368bc4eb2c340"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structIVisitor.html#af0d2677553ffa623f1f368bc4eb2c340">~IVisitor</a> ()=default</td></tr>
+<tr class="separator:af0d2677553ffa623f1f368bc4eb2c340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Интерфейс для работы с компанентами графического редактора </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="af0d2677553ffa623f1f368bc4eb2c340" name="af0d2677553ffa623f1f368bc4eb2c340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0d2677553ffa623f1f368bc4eb2c340">&#9670;&nbsp;</a></span>~IVisitor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IVisitor::~IVisitor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a0437fb55350e869165d0b7691e64bb3e" name="a0437fb55350e869165d0b7691e64bb3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0437fb55350e869165d0b7691e64bb3e">&#9670;&nbsp;</a></span>visit() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IVisitor::visit </td>
+          <td>(</td>
+          <td class="paramtype">class <a class="el" href="classDot.html">Dot</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Замещается в <a class="el" href="classExportSerializer.html#ad6c0865c69560e835df6d6b67dce7f83">ExportSerializer</a>.</p>
+
+</div>
+</div>
+<a id="aaff6cce780bc6cee293e6d3b200c905d" name="aaff6cce780bc6cee293e6d3b200c905d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff6cce780bc6cee293e6d3b200c905d">&#9670;&nbsp;</a></span>visit() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IVisitor::visit </td>
+          <td>(</td>
+          <td class="paramtype">class <a class="el" href="classFile.html">File</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Замещается в <a class="el" href="classExportSerializer.html#ac5b83ca5939d41f274207ba012069b71">ExportSerializer</a>.</p>
+
+</div>
+</div>
+<a id="aaa2e606de979121c9326c47838135648" name="aaa2e606de979121c9326c47838135648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa2e606de979121c9326c47838135648">&#9670;&nbsp;</a></span>visit() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IVisitor::visit </td>
+          <td>(</td>
+          <td class="paramtype">class <a class="el" href="classLine.html">Line</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Замещается в <a class="el" href="classExportSerializer.html#aeebc89ea9798feec740e1ea6f0c09ff5">ExportSerializer</a>.</p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li><a class="el" href="interface_8h_source.html">interface.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

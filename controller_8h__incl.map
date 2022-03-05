@@ -1,0 +1,9 @@
+<map id="controller.h" name="controller.h">
+<area shape="rect" id="node1" title="Файл контроллера (MVC)" alt="" coords="80,5,165,32"/>
+<area shape="rect" id="node2" href="$interface_8h.html" title="Файл интер" alt="" coords="5,155,88,181"/>
+<area shape="rect" id="node4" href="$component_8h.html" title="Файл компонентов" alt="" coords="133,80,229,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="51,229,119,256"/>
+<area shape="rect" id="node5" title=" " alt="" coords="163,155,235,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="259,155,298,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="321,155,396,181"/>
+</map>
